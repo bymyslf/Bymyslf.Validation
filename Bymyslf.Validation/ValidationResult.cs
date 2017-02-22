@@ -73,5 +73,10 @@
         {
             return String.Join(", ", this.errors.Select(err => err.Message));
         }
+        
+        public static implicit operator bool(ValidationResult validationResult)
+        {
+            return validationResult.IsValid;
+        }
     }
 }
